@@ -22,7 +22,7 @@ from .tls import TLSArchInfo
 
 class ArchAArch64(Arch):
     def __init__(self, endness=Endness.LE):
-        super(ArchAArch64, self).__init__(endness)
+        super(ArchAArch64, self).__init__(endness,instruction_endness='Iend_LE')
         if endness == Endness.BE:
             self.ida_processor = 'armb'
             self.function_prologs = set((
